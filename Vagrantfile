@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--ostype", "MacOS_64"]
     vb.customize ["modifyvm", :id, "--ioapic", "on"]
     vb.customize ["modifyvm", :id, "--nestedpaging", "off"]
-    vb.gui = false
+    vb.gui = true
     vb.name = 'mojave-xcode'
     vb.cpus = "#{CPU_COUNT}"
     vb.memory = "#{RAM_SIZE}"
