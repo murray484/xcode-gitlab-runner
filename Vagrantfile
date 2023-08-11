@@ -13,7 +13,8 @@ RAM_SIZE=ENV['RAM_SIZE'] || 4096
 Vagrant.configure("2") do |config|
   
   # Get box
-  config.vm.box = "leav3/macos_mojave"
+  config.vm.box = "gobadiah/macos-mojave"
+  config.vm.box_version = "10.14.6"
 
   # Configuration
   config.vm.provider 'virtualbox' do |vb|
