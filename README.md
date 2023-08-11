@@ -8,10 +8,6 @@ A Vagrantfile to build a fully functional macOS / Xcode GitLab runner
 Once VirtualBox and Vagrant are installed, use the following command to build and run the box :
 
     XCODE_XIP_FILE="/path-to-Xcode.xip" \
-    GITLAB_URL="https://gitlab.com/" \
-    GITLAB_REGISTRATION_TOKEN="your-token" \
-    GITLAB_RUNNER_NAME="macMachine" \
-    GITLAB_RUNNER_TAGS="macos,xcode11" \
     vagrant up
 
 Note that an Xcode .xip install archive is required to perform Xcode installation.
@@ -31,7 +27,6 @@ Then use the following **.gitlab-ci.yml** file to perform a code analysis (and p
   
 **start-simulator.sh** pre-launches the simulator for tests. Be careful to use the same simulator as the one defined in you **sonar-project.properties**.
 
-**run-sonar-swift.sh** builds, tests, analyses and publishes results to a SonarQube server. **SONAR_URL** and **SONAR_TOKEN** are defined as GitLab CI/CD variables.
 
 ## What's in the box ?
 
@@ -90,10 +85,6 @@ Here is a list of available parameters
 | Parameter                 | Default value        |
 |---------------------------|:--------------------:|
 | XCODE_XIP_FILE            | none (manadatory)    |
-| GITLAB_URL                | https://gitlab.com/  |
-| GITLAB_REGISTRATION_TOKEN | none (mandatory)     |
-| GITLAB_RUNNER_NAME        | none (mandatory)     |
-| GITLAB_RUNNER_TAGS        | none (mandatory)     |
 | CPU_COUNT                 | 2                    |
 | RAM_SIZE                  | 4096                 |
 
