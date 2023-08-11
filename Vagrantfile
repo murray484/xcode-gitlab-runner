@@ -174,9 +174,6 @@ Vagrant.configure("2") do |config|
   # GitLab runner install
   config.vm.provision "shell", privileged: false, name: 'gitlab-runner installation', inline: <<-SHELL
     /usr/local/bin/brew install gitlab-runner
-    /usr/local/bin/brew services start gitlab-runner
-    # Registration
-    gitlab-runner register --non-interactive --url "#{GITLAB_URL}" --registration-token "#{GITLAB_REGISTRATION_TOKEN}" --executor "shell" --name "#{GITLAB_RUNNER_NAME}" --tag-list "#{GITLAB_RUNNER_TAGS}"
   SHELL
 
   # Reboot
